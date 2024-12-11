@@ -10,9 +10,11 @@ const app = express();
 
 // Enable CORS for the frontend
 app.use(cors({
-    origin:  "*", // Allow requests from your frontend
+    origin:  process.env.ORIGIN, // Allow requests from your frontend
     methods: ["GET", "POST", "PUT", "DELETE"],
 }));
+
+app.options("*", cors());
 
 app.use(express.json());
 app.use("/users", userRoutes);
