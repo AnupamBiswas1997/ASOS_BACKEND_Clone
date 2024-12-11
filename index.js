@@ -10,7 +10,7 @@ const app = express();
 
 // Enable CORS for the frontend
 app.use(cors({
-    origin: process.env.ORIGIN, // Allow requests from your frontend
+    origin:  "*", // Allow requests from your frontend
     methods: ["GET", "POST", "PUT", "DELETE"],
 }));
 
