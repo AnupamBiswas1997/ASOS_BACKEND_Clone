@@ -19,13 +19,12 @@ app.use("/users", userRoutes);
 app.use("/cart", cartRoutes);
 app.use("/products", productRoutes);
 
-const PORT = process.env.PORT || 3000; 
-app.listen(PORT, () => {
+app.listen(() => {
     try {
         connectToDB();
         console.log("Connected to DB!!!");
     } catch (error) {
         console.log("Failed to connect to DB!!!", error);
     }
-    console.log(`Server Started on port ${PORT}`);
+    console.log(`Server Started!!!`);
 });
